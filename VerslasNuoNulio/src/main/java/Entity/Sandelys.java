@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(schema = "verslasnuonulio", name = "sandelys")
 public class Sandelys {
@@ -76,5 +77,17 @@ public class Sandelys {
 
     public void setKaina(double kaina) {
         this.kaina = kaina;
+    }
+
+    @Override
+    public String toString() {
+        return "Sandelys{" +
+                "id=" + id +
+                ", pavadinimas='" + pavadinimas + '\'' +
+                ", kategorija='" + kategorija + '\'' +
+                ", spalva='" + spalva + '\'' +
+                ", kiekis=" + kiekis +
+                ", kaina=" + kaina +
+                '}';
     }
 }
