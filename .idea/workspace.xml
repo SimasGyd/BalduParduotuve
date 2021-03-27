@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+=======
+>>>>>>> origin/master
   <component name="BranchesTreeState">
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+<<<<<<< HEAD
+=======
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+>>>>>>> origin/master
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="85f5d665-7cc8-4e59-a0be-c204f1d155cf" name="Default Changelist" comment="Sukurtas hibernate">
+=======
+    <list default="true" id="e855cf88-8165-40f0-a83b-3c2e3c1dcedc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/BalduParduotuve.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VerslasNuoNulio/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/VerslasNuoNulio/src/main/java/Main.java" afterDir="false" />
+>>>>>>> origin/master
       <change beforePath="$PROJECT_DIR$/VerslasNuoNulio/src/main/java/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/VerslasNuoNulio/src/main/java/util/HibernateUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +46,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -31,10 +57,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+=======
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+>>>>>>> origin/master
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+<<<<<<< HEAD
         <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
       </MavenGeneralSettings>
     </option>
@@ -43,15 +77,28 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectId" id="1qKioN2ffVa3A44ohEcW1PGg98i" />
+=======
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qKjmp2V5rijvAZUOnOtNGQQ3DC" />
+>>>>>>> origin/master
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RunManager">
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../jdbc-hibernate-master" />
+  </component>
+  <component name="RunManager" selected="Application.Main">
+>>>>>>> origin/master
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="VerslasNuoNulio" />
@@ -59,6 +106,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration name="[]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.[]" />
+      <item itemvalue="Application.Main" />
+    </list>
+>>>>>>> origin/master
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -68,6 +145,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="85f5d665-7cc8-4e59-a0be-c204f1d155cf" name="Default Changelist" comment="" />
       <created>1616834856342</created>
       <option name="number" value="Default" />
@@ -96,6 +174,14 @@
       <updated>1616840345894</updated>
     </task>
     <option name="localTasksCounter" value="4" />
+=======
+      <changelist id="e855cf88-8165-40f0-a83b-3c2e3c1dcedc" name="Default Changelist" comment="" />
+      <created>1616835337296</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616835337296</updated>
+    </task>
+>>>>>>> origin/master
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +196,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="Pirmas pushas" />
     <MESSAGE value="Objektas preke sukurimas" />
     <MESSAGE value="Sukurtas hibernate" />
@@ -136,5 +223,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1616834908145" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="520" y="236" key="#Notifications" timestamp="1616836451161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="520" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1616836451161" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616840921383">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1616840921383" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1616840503018">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616840503018" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1616840806381">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1616840806381" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616840356125">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616840356125" />
+>>>>>>> origin/master
   </component>
 </project>
