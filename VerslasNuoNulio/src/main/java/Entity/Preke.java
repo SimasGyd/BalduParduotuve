@@ -1,19 +1,32 @@
-package Prekes;
+package Entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PREKE")
 public class Preke {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column
     private String pavadinimas;
+
+    @Column
     private String kategorija;
+
+    @Column
     private String spalva;
-    private int kiekis;
+
+    @Column
     private double kaina;
 
-    public Preke(String pavadinimas, String kategorija, String spalva, int kiekis, double kaina) {
-        this.pavadinimas = pavadinimas;
-        this.kategorija = kategorija;
-        this.spalva = spalva;
-        this.kiekis = kiekis;
-        this.kaina = kaina;
-    }
 
     public String getPavadinimas() {
         return pavadinimas;
@@ -39,13 +52,6 @@ public class Preke {
         this.spalva = spalva;
     }
 
-    public int getKiekis() {
-        return kiekis;
-    }
-
-    public void setKiekis(int kiekis) {
-        this.kiekis = kiekis;
-    }
 
     public double getKaina() {
         return kaina;
