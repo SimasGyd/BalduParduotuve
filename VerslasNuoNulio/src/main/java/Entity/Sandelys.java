@@ -1,16 +1,21 @@
 package Entity;
 
+import org.hibernate.Session;
+import util.HibernateUtil;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
-@Table(schema = "verslasnuonulio", name = "sandelys")
-public class Sandelys {
+@Table(name = "SANDELYS")
+public class Sandelys implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -90,4 +95,5 @@ public class Sandelys {
                 ", kaina=" + kaina +
                 '}';
     }
+
 }
