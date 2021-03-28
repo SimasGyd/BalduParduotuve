@@ -1,3 +1,5 @@
+import Entity.Sandelys;
+import Entity.SandelysDao;
 import Entity.*;
 
 import java.util.List;
@@ -28,7 +30,7 @@ public class Main {
         for (Parduotuve parda : prekiuLikutis) {
             System.out.println(parda);
         }
+        new Project();
     }
 }
-
 

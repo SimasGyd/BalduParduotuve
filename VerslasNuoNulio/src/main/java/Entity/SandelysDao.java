@@ -1,7 +1,7 @@
 package Entity;
 
 import org.hibernate.Session;
-import util.HibernateUtil;
+import Util.HibernateUtil;
 
 import java.util.List;
 
