@@ -9,10 +9,11 @@ public class Main {
         SandelysDao sandelysDao = new SandelysDao();
 
 
-//        List<Sandelys> remainingPrekes = sandelysDao.getAllPrekes();
-//        System.out.println("List of all remaining Prekes in sandelys :");
-//        for (Sandelys sand : remainingPrekes) {
-//            System.out.println(sand);
+        List<Sandelys> remainingPrekes = sandelysDao.getAllPrekes();
+        System.out.println("List of all remaining Prekes in sandelys :");
+        for (Sandelys sand : remainingPrekes) {
+            System.out.println(sand);
         }
     }
+}
 
