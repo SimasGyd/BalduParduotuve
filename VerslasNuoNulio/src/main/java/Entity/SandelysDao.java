@@ -13,7 +13,7 @@ public class SandelysDao {
 
         @SuppressWarnings("unchecked")
         List<Sandelys> prekesByName = (List<Sandelys>) session.createQuery(
-                "FROM Sandelys s ORDER BY s.id ASC").list();
+                "FROM Preke s left join Entity.Sandelys a on s.id = a.prekesid ORDER BY s.id ASC").list();
 
         session.getTransaction().commit();
         session.close();

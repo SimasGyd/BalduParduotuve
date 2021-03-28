@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.List;
@@ -22,19 +25,20 @@ public class Sandelys implements Serializable {
     private Long id;
 
     @Column
-    private String pavadinimas;
-
-    @Column
-    private String kategorija;
-
-    @Column
-    private String spalva;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private Preke prekesid;
 
     @Column
     private int kiekis;
 
-    @Column
-    private double kaina;
+    public Preke getPrekesid() {
+        return prekesid;
+    }
+
+    public void setPrekesid(Preke prekesid) {
+        this.prekesid = prekesid;
+    }
 
     public Long getId() {
         return id;
@@ -44,29 +48,7 @@ public class Sandelys implements Serializable {
         this.id = id;
     }
 
-    public String getPavadinimas() {
-        return pavadinimas;
-    }
 
-    public void setPavadinimas(String pavadinimas) {
-        this.pavadinimas = pavadinimas;
-    }
-
-    public String getKategorija() {
-        return kategorija;
-    }
-
-    public void setKategorija(String kategorija) {
-        this.kategorija = kategorija;
-    }
-
-    public String getSpalva() {
-        return spalva;
-    }
-
-    public void setSpalva(String spalva) {
-        this.spalva = spalva;
-    }
 
     public int getKiekis() {
         return kiekis;
@@ -76,24 +58,7 @@ public class Sandelys implements Serializable {
         this.kiekis = kiekis;
     }
 
-    public double getKaina() {
-        return kaina;
-    }
 
-    public void setKaina(double kaina) {
-        this.kaina = kaina;
-    }
 
-    @Override
-    public String toString() {
-        return "Sandelys{" +
-                "id=" + id +
-                ", pavadinimas='" + pavadinimas + '\'' +
-                ", kategorija='" + kategorija + '\'' +
-                ", spalva='" + spalva + '\'' +
-                ", kiekis=" + kiekis +
-                ", kaina=" + kaina +
-                '}';
-    }
 
 }
