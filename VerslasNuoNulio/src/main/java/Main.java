@@ -1,19 +1,14 @@
 import Entity.Sandelys;
 import Entity.SandelysDao;
+import Valdymas.Lobby.LobbyValdymas;
+import Valdymas.Valdymas;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Sandelys sandelys = new Sandelys();
-        SandelysDao sandelysDao = new SandelysDao();
-
-
-        List<Sandelys> remainingPrekes = sandelysDao.getAllPrekes();
-        System.out.println("List of all remaining Prekes in sandelys :");
-        for (Sandelys sand : remainingPrekes) {
-            System.out.println(sand);
-        }
+        new Project();
     }
 }
+
 
