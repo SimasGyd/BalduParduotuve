@@ -1,10 +1,15 @@
 package Valdymas.Darbuotojas;
 
+import Entity.Pardavimai;
+import Entity.Parduotuve;
+import Entity.Sandelys;
 import Services.DarbuotojoServises;
 import Services.PirkejoServises;
 import Util.Input.InputReciever;
 import Util.Output.OutputReciever;
 import Valdymas.Valdymas;
+
+import java.util.List;
 
 public class DarbuotojoValdymas implements Valdymas {
     private final DarbuotojoServises darbuotojoServises;
@@ -31,9 +36,10 @@ public class DarbuotojoValdymas implements Valdymas {
         output.produce("1 - Užsakyti naują prekę");
         output.produce("2 - Parduotuvės prekių likučiai");
         output.produce("3 - Sandėlio prekių likučiai");
-        output.produce("4 - Prekės kurios eina į pabaigą");
-        output.produce("5 - Užsakyti prekę iš sandėlio į parduotuvę");
-        output.produce("6 - Grįžti");
+        output.produce("4 - Pardavimų sąrašas");
+        output.produce("5 - Prekės kurios eina į pabaigą");
+        output.produce("6 - Užsakyti prekę iš sandėlio į parduotuvę");
+        output.produce("7 - Grįžti");
     }
 
     private void receiveInputAndAct() {
@@ -52,14 +58,18 @@ public class DarbuotojoValdymas implements Valdymas {
                 break;
             }
             case "4": {
-                prekesKuriasReikiaUzsakyti();
+                pardavimaiList();
                 break;
             }
             case "5": {
-                uzsakytiPrekeIsSandelio();
+                prekesKuriasReikiaUzsakyti();
                 break;
             }
             case "6": {
+                uzsakytiPrekeIsSandelio();
+                break;
+            }
+            case "7": {
                 return;
             }
             default: {
@@ -75,18 +85,35 @@ public class DarbuotojoValdymas implements Valdymas {
     }
 
     public void parduotuvesLikuciai() {
-        return;
+        List<Parduotuve> prekiuLikutis = DarbuotojoServises.prekiuLikutisParduotuveje();
+        System.out.println("Prekių likutis parduotuvėje :");
+        for (Parduotuve parda : prekiuLikutis) {
+            System.out.println(parda);
+        }
     }
 
     public void sandelioLikuciai() {
-        return;
+        List<Sandelys> remainingPrekes = darbuotojoServises.prekiuLikutisSandelyje();
+        System.out.println("Prekių likutis sandėlyje :");
+        for (Sandelys sand : remainingPrekes) {
+            System.out.println(sand);
+        }
     }
+    public void pardavimaiList(){
+        List<Pardavimai> parduotosPrekes = darbuotojoServises.pardavimaiList();
+        System.out.println("Parduotos prekių sąrašas :");
+        for (Pardavimai pard : parduotosPrekes) {
+            System.out.println(pard);
+        }
+    }
+
 
     public void prekesKuriasReikiaUzsakyti() {
         return;
     }
 
     public void uzsakytiPrekeIsSandelio() {
-        return; }
+        return;
+    }
 
 }
