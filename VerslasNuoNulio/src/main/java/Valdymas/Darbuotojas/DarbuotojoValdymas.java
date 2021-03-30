@@ -1,16 +1,13 @@
 package Valdymas.Darbuotojas;
 
 import Entity.Pardavimai;
-import Entity.PardavimaiDao;
 import Entity.Parduotuve;
 import Entity.Sandelys;
 import Services.DarbuotojoServises;
 import Services.PirkejoServises;
-import Util.HibernateUtil;
 import Util.Input.InputReciever;
 import Util.Output.OutputReciever;
 import Valdymas.Valdymas;
-import org.hibernate.Session;
 
 import java.util.List;
 
