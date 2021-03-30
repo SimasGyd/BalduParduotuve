@@ -1,9 +1,19 @@
 package repository.pirkejas;
 
-import javax.persistence.EntityManager;
+import Entity.Pardavimai;
+import repository.AbstractRepository;
 
-public class PirkejasRepository {
+import javax.persistence.EntityManager;
+import java.util.List;
+
+public class PirkejasRepository extends AbstractRepository {
 
     public PirkejasRepository(EntityManager entityManager) {
+        super(entityManager, Pardavimai.class);
+    }
+
+    @Override
+    public List findAll() {
+        return null;
     }
 }

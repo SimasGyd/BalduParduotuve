@@ -80,9 +80,6 @@ public class DarbuotojoValdymas implements Valdymas {
         receiveInputAndAct();
     }
 
-    public void sukurtiNaujaPreke() {
-        return;
-    }
 
     public void parduotuvesLikuciai() {
         List<Parduotuve> prekiuLikutis = DarbuotojoServises.prekiuLikutisParduotuveje();
@@ -99,7 +96,8 @@ public class DarbuotojoValdymas implements Valdymas {
             System.out.println(sand);
         }
     }
-    public void pardavimaiList(){
+
+    public void pardavimaiList() {
         List<Pardavimai> parduotosPrekes = darbuotojoServises.pardavimaiList();
         System.out.println("Parduotos prekių sąrašas :");
         for (Pardavimai pard : parduotosPrekes) {
@@ -116,4 +114,16 @@ public class DarbuotojoValdymas implements Valdymas {
         return;
     }
 
+    private void sukurtiNaujaPreke() {
+        output.produce("Įveskite prekės pavadinimą : ");
+        String prekesPavadinimas = receiver.receiveLine();
+        output.produce("Įveskite prekės kategoriją : ");
+        String prekesKategorija = receiver.receiveLine();
+        output.produce("Įveskite prekės spalvą : ");
+        String prekesSpalva = receiver.receiveLine();
+        output.produce("Įveskite prekės kainą :");
+        Double prekesKaina = Double.valueOf(receiver.receiveLine());
+        darbuotojoServises.uzsakytiNaujaPrekiu(prekesPavadinimas, prekesKategorija, prekesSpalva, prekesKaina);
+        output.produce("Nauja prekė užsakyta");
+    }
 }

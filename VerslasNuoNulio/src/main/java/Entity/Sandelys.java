@@ -36,6 +36,7 @@ public class Sandelys implements Serializable {
     @Column
     private int kiekis;
 
+
     public Set<Sandelys> getPrekesid() {
         return prekesid;
     }
