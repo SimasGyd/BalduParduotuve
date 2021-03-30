@@ -2,16 +2,23 @@ package Services;
 
 import Entity.Pardavimai;
 import Entity.Parduotuve;
+import Entity.Preke;
 import Entity.Sandelys;
 import Util.HibernateUtil;
 import org.hibernate.Session;
+import repository.pirkejas.PirkejasRepository;
 import repository.sandelys.SandelysRepository;
 
 import java.util.List;
 
 public class DarbuotojoServises {
+
+    private final SandelysRepository sandelysRepository;
+
     public DarbuotojoServises(SandelysRepository sandelysRepository) {
+        this.sandelysRepository = sandelysRepository;
     }
+
     public static List<Parduotuve> prekiuLikutisParduotuveje() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -49,4 +56,10 @@ public class DarbuotojoServises {
         session.close();
         return parduotosPrekes;
     }
+    public Preke uzsakytiNaujaPrekiu(String pavadinimas, String kategorija, String spalva, double kaina ){
+        Preke preke = new Preke(pavadinimas, kategorija, spalva, kaina);
+        sandelysRepository.save(preke);
+        return preke;
+    }
+
 }

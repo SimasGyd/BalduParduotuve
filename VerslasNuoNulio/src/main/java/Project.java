@@ -28,8 +28,8 @@ public class Project {
     private LobbyValdymas constructEntryController(EntityManager entityManager) {
         InputReciever receiver = new DefaultInputReciever();
         OutputReciever output = new DefaultOutputReciever();
-        DarbuotojoServises darbuotojoServises = new DarbuotojoServises(new SandelysRepository(entityManager));
-        PirkejoServises pirkejoServises = new PirkejoServises(new PirkejasRepository(entityManager), darbuotojoServises);
+        DarbuotojoServises darbuotojoServises = new DarbuotojoServises(new SandelysRepository(entityManager) );
+        PirkejoServises pirkejoServises = new PirkejoServises(new PirkejasRepository(entityManager));
 
         PirkejoValdymas pirkejoValdymas = new PirkejoValdymas(darbuotojoServises, pirkejoServises, receiver, output);
         DarbuotojoValdymas darbuotojoValdymas = new DarbuotojoValdymas(darbuotojoServises, pirkejoServises, receiver, output);

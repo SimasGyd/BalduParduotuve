@@ -1,21 +1,15 @@
 package Entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "PREKE")
-public class Preke {
+public class Preke extends Sandelys {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,6 +27,13 @@ public class Preke {
     @Column
     private double kaina;
 
+
+    public Preke(String pavadinimas, String kategorija, String spalva, double kaina) {
+        this.pavadinimas = pavadinimas;
+        this.kategorija = kategorija;
+        this.spalva = spalva;
+        this.kaina = kaina;
+    }
 
     public String getPavadinimas() {
         return pavadinimas;
