@@ -1,4 +1,4 @@
-package Util;
+package Utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -6,12 +6,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-@SuppressWarnings("deprecation")
-public class HibernateUtil {
+public class Utils {
+    private static org.hibernate.SessionFactory sessionFactory = buildSessionFactory();
 
-    private static SessionFactory sessionFactory = buildSessionFactory();
-
-    private static SessionFactory buildSessionFactory()
+    private static org.hibernate.SessionFactory buildSessionFactory()
     {
         try
         {
