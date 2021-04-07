@@ -6,6 +6,9 @@ import Entity.Preke;
 import Entity.Sandelys;
 import Utils.Utils;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class DataImport {
     public void addPrekes() {

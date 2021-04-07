@@ -64,19 +64,21 @@ public class PirkejasController implements Controller {
     }
 
     private void listAllPrekes() {
-        output.produce("==== Prekės Parduotuvėje ====");
-        prekeServise.findAllPrekes().forEach(parduotuve -> output.produce(parduotuve.toString()));
-        output.produce("=============================");
+//    prekeServise.bandymas();
     }
+
     private void prekiuFiltrasPagalSpalva() {
-        return;
+
     }
 
     private void prekiuFiltrasPagalKaina() {
-        return;
     }
 
     private void pirktiPreke() {
-        return; }
+        output.produce("Įveskite prekės ID :");
+        int id = Integer.valueOf(receiver.receiveLine());
+        output.produce("Įveskite kiekį :");
+        int kiekis = Integer.valueOf(receiver.receiveLine());
+    }
 }
 
