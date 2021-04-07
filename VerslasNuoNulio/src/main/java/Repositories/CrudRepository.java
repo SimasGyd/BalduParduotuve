@@ -1,4 +1,4 @@
-package repository;
+package Repositories;
 
 import java.util.List;
 
@@ -11,4 +11,3 @@ public interface CrudRepository<T, ID> {
 
     void delete(T entity);
 }
-

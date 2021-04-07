@@ -1,12 +1,14 @@
-package Util.Input;
+package Utils.Input;
 
 import java.util.Scanner;
 
-public class DefaultInputReciever implements InputReciever{
+public class DefaultInputReceiver implements InputReceiver{
+
     private final Scanner in = new Scanner(System.in);
 
     @Override
     public String receiveLine() {
         return in.nextLine();
     }
+
 }

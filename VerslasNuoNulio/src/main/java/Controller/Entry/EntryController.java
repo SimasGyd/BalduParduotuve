@@ -1,22 +1,21 @@
-package Valdymas.Lobby;
+package Controller.Entry;
 
-import Util.Input.InputReciever;
-import Util.Output.OutputReciever;
-import Valdymas.Valdymas;
+import Controller.Controller;
+import Utils.Input.InputReceiver;
+import Utils.Output.OutputProducer;
 
-public class LobbyValdymas implements Valdymas {
+public class EntryController implements Controller {
 
-    private final Valdymas darbuotojas;
-    private final Valdymas pirkejas;
-    private final InputReciever receiver;
-    private final OutputReciever output;
+    private final Controller darbuotojasController;
+    private final Controller pirkejasController;
+    private final InputReceiver receiver;
+    private final OutputProducer output;
 
-    public LobbyValdymas(Valdymas darbuotojas, Valdymas pirkejas, InputReciever receiver, OutputReciever output) {
-        this.darbuotojas = darbuotojas;
-        this.pirkejas = pirkejas;
+    public EntryController(Controller darbuotojasController, Controller pirkejasController, InputReceiver receiver, OutputProducer output) {
+        this.darbuotojasController = darbuotojasController;
+        this.pirkejasController = pirkejasController;
         this.receiver = receiver;
         this.output = output;
-
     }
 
     @Override
@@ -36,11 +35,11 @@ public class LobbyValdymas implements Valdymas {
         String input = receiver.receiveLine().toUpperCase();
         switch (input) {
             case "1": {
-                darbuotojas.run();
+                pirkejasController.run();
                 break;
             }
             case "2": {
-                pirkejas.run();
+                darbuotojasController.run();
                 break;
             }
             case "3": {
@@ -54,4 +53,3 @@ public class LobbyValdymas implements Valdymas {
         receiveInputAndAct();
     }
 }
-

@@ -1,46 +1,32 @@
 package Entity;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "PARDAVIMAI")
-public class Pardavimai implements Serializable {
+@Table(name = "pardavimai")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Pardavimai {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY )
-    @JoinTable(
-            name = "fk_preke_pardavimai",
-            joinColumns = { @JoinColumn(name = "prekesid") },
-            inverseJoinColumns = { @JoinColumn(name = "id") }
-    )
-    private Set<Pardavimai> prekesid = new HashSet<>();
-
-    @Column
     private int kiekis;
 
-    public Set<Pardavimai> getPrekesid() {
-        return prekesid;
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PREKE_ID")
+    private Preke preke;
 
-    public void setPrekesid(Set<Pardavimai> prekesid) {
-        this.prekesid = prekesid;
+    public Pardavimai() {
     }
 
     public Long getId() {
@@ -51,7 +37,6 @@ public class Pardavimai implements Serializable {
         this.id = id;
     }
 
-
     public int getKiekis() {
         return kiekis;
     }
@@ -60,4 +45,22 @@ public class Pardavimai implements Serializable {
         this.kiekis = kiekis;
     }
 
+    public Preke getPreke() {
+        return preke;
+    }
+
+    public Pardavimai(int kiekis) {
+        this.kiekis = kiekis;
+    }
+
+    public void setPreke(Preke preke) {
+        this.preke = preke;
+    }
+
+    @Override
+    public String toString() {
+        return  preke +
+                ", Kiekis : " +
+                kiekis;
+    }
 }

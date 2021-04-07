@@ -1,24 +1,22 @@
-package Valdymas.Pirkejas;
+package Controller.Pirkejas;
 
-import Services.DarbuotojoServises;
-import Services.PirkejoServises;
-import Util.Input.InputReciever;
-import Util.Output.OutputReciever;
-import Valdymas.Valdymas;
+import Controller.Controller;
+import Servises.PrekeServise;
+import Utils.Input.InputReceiver;
+import Utils.Output.OutputProducer;
 
-public class PirkejoValdymas implements Valdymas {
-    private final DarbuotojoServises darbuotojoServises;
-    private final PirkejoServises pirkejoServises;
-    private final InputReciever receiver;
-    private final OutputReciever output;
+public class PirkejasController implements Controller {
 
-    public PirkejoValdymas(DarbuotojoServises darbuotojoServises, PirkejoServises pirkejoServises, InputReciever receiver, OutputReciever output) {
-        this.darbuotojoServises = darbuotojoServises;
-        this.pirkejoServises = pirkejoServises;
+
+    private final PrekeServise prekeServise;
+    private final InputReceiver receiver;
+    private final OutputProducer output;
+
+    public PirkejasController(PrekeServise prekeServise, InputReceiver receiver, OutputProducer output) {
+        this.prekeServise = prekeServise;
         this.receiver = receiver;
         this.output = output;
     }
-
 
     @Override
     public void run() {
@@ -66,9 +64,10 @@ public class PirkejoValdymas implements Valdymas {
     }
 
     private void listAllPrekes() {
-        return;
+        output.produce("==== Prekės Parduotuvėje ====");
+        prekeServise.findAllPrekes().forEach(parduotuve -> output.produce(parduotuve.toString()));
+        output.produce("=============================");
     }
-
     private void prekiuFiltrasPagalSpalva() {
         return;
     }

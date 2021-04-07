@@ -1,38 +1,98 @@
 package Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Set;
 
-@Entity
-@Table(name = "PREKE")
-public class Preke extends Sandelys {
+@Entity(name = "PREKE")
+@Table(name = "preke")
+public class Preke implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private Long id;
 
-    @Column
+    @Column(name = "Pavadinimas")
     private String pavadinimas;
 
-    @Column
+    @Column(name = "Kategorija")
     private String kategorija;
 
-    @Column
+    @Column(name = "Spalva")
     private String spalva;
 
-    @Column
+    @Column(name = "Kaina")
     private double kaina;
 
+    @OneToMany(mappedBy = "preke", cascade = CascadeType.ALL)
+    private Collection<Sandelys> sandelysList = new ArrayList<Sandelys>();
+
+    @OneToMany(mappedBy = "preke", cascade = CascadeType.ALL)
+    private Collection<Pardavimai> pardavimaiList = new ArrayList<Pardavimai>();
+
+    @OneToMany(mappedBy = "preke", cascade = CascadeType.ALL)
+    private Collection<Parduotuve> parduotuveList = new ArrayList<Parduotuve>();
+
+    public Collection<Pardavimai> getPardavimaiList() {
+        return pardavimaiList;
+    }
+
+    public void setPardavimaiList(Set<Pardavimai> pardavimaiList) {
+        this.pardavimaiList = pardavimaiList;
+    }
+
+    public Collection<Parduotuve> getParduotuveList() {
+        return parduotuveList;
+    }
+
+    public void setParduotuveList(Set<Parduotuve> parduotuveList) {
+        this.parduotuveList = parduotuveList;
+    }
 
     public Preke(String pavadinimas, String kategorija, String spalva, double kaina) {
         this.pavadinimas = pavadinimas;
         this.kategorija = kategorija;
         this.spalva = spalva;
         this.kaina = kaina;
+    }
+
+    public Preke() {
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Prekės ID : " + id +
+                        ", Pavadinimas : " + pavadinimas +
+                        ", Kategorija : " + kategorija  +
+                        ", Spalva : " + spalva +
+                        ", Kaina : " + kaina;
+    }
+
+    public Collection<Sandelys> getSandelysList() {
+        return sandelysList;
+    }
+
+    public void setSandelysList(Set<Sandelys> sandelysList) {
+        this.sandelysList = sandelysList;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getPavadinimas() {
@@ -58,7 +118,6 @@ public class Preke extends Sandelys {
     public void setSpalva(String spalva) {
         this.spalva = spalva;
     }
-
 
     public double getKaina() {
         return kaina;

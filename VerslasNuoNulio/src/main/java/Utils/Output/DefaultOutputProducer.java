@@ -1,8 +1,9 @@
-package Util.Output;
+package Utils.Output;
 
-public class DefaultOutputReciever implements OutputReciever {
+public class DefaultOutputProducer implements OutputProducer{
     @Override
     public void produce(String output) {
         System.out.println(output);
     }
 }
+
