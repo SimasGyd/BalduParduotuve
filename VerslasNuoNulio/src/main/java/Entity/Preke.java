@@ -135,3 +135,5 @@ public class Preke implements Serializable {
         this.kaina = kaina;
     }
 }
+
+
