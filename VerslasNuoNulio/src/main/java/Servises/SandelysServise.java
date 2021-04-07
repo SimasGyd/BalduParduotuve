@@ -1,18 +1,19 @@
 package Servises;
 
+import Entity.Preke;
 import Entity.Sandelys;
 import Repositories.SandelysRepository.SandelysRepository;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class SandelysServise {
 
     private final SandelysRepository sandelysRepository;
-    private final PrekeServise prekeServise;
 
-    public SandelysServise(SandelysRepository sandelysRepository, PrekeServise prekeServise) {
+    public SandelysServise(SandelysRepository sandelysRepository) {
         this.sandelysRepository = sandelysRepository;
-        this.prekeServise = prekeServise;
     }
 
     public List<Sandelys> findAllSandelys() {
@@ -23,12 +24,10 @@ public class SandelysServise {
         return sandelysRepository.ispetiApiePrekesUzsakyma();
     }
 
-    public Sandelys saveNewPrekeSand(int kiekis) {
-        Sandelys sandelys = new Sandelys(kiekis);
+    public Sandelys saveNewPrekeSand(int kiekis, Preke preke) {
+        Sandelys sandelys = new Sandelys(kiekis, preke);
         sandelysRepository.save(sandelys);
-        return sandelys;
-
-
+        return sandelys;}
 
     }
-}
+

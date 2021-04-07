@@ -22,8 +22,15 @@ public class Sandelys {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PREKE_ID")
     private Preke preke;
+
     public Sandelys() {
     }
+
+    public Sandelys(int kiekis, Preke preke) {
+        this.kiekis = kiekis;
+        this.preke = preke;
+    }
+
     @Override
     public String toString() {
         return  preke +

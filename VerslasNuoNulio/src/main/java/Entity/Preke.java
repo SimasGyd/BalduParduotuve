@@ -69,6 +69,14 @@ public class Preke implements Serializable {
     public Preke() {
     }
 
+    public Preke(String pavadinimas, String kategorija, String spalva, double kaina, Collection<Sandelys> sandelysList) {
+        this.pavadinimas = pavadinimas;
+        this.kategorija = kategorija;
+        this.spalva = spalva;
+        this.kaina = kaina;
+        this.sandelysList = sandelysList;
+    }
+
     @Override
     public String toString() {
         return

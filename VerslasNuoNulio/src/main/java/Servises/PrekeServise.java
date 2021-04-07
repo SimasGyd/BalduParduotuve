@@ -1,8 +1,10 @@
 package Servises;
 
 import Entity.Preke;
+import Entity.Sandelys;
 import Repositories.PrekeRepository.PrekeRepository;
 
+import java.util.Collection;
 import java.util.List;
 
 public class PrekeServise {
