@@ -1,12 +1,15 @@
 package Controller.Darbuotojas;
 
 import Controller.Controller;
+import Entity.Sandelys;
 import Servises.PardavimaiServise;
 import Servises.ParduotuveServise;
 import Servises.PrekeServise;
 import Servises.SandelysServise;
 import Utils.Input.InputReceiver;
 import Utils.Output.OutputProducer;
+
+import java.util.Collection;
 
 public class DarbuotojasController implements Controller {
 
@@ -94,9 +97,8 @@ public class DarbuotojasController implements Controller {
         output.produce("Įveskite prekės kainą :");
         Double kaina = Double.valueOf(receiver.receiveLine());
         output.produce("Įveskite prekės kiekį :");
-        int kiekis = Integer.valueOf(receiver.receiveLine());
-        prekeServise.saveNewPreke(pavadinimas, kategorija, spalva, kaina);
-        //sandelysServise.saveNewPrekeSand(kiekis);
+        int kiekis  = Integer.valueOf(receiver.receiveLine());
+        sandelysServise.saveNewPrekeSand(kiekis, prekeServise.saveNewPreke(pavadinimas, kategorija, spalva, kaina));
         output.produce("Nauja prekė sėkmingai užsakyta!");
     }
 

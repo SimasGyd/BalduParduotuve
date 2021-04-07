@@ -41,7 +41,7 @@ public class Projektas {
 
         PrekeServise prekeServise = new PrekeServise(new PrekeRepository(entityManager));
         PardavimaiServise pardavimaiServise = new PardavimaiServise(new PardavimaiRepository(entityManager));
-        SandelysServise sandelysServise = new SandelysServise(new SandelysRepository(entityManager), prekeServise);
+        SandelysServise sandelysServise = new SandelysServise(new SandelysRepository(entityManager));
         ParduotuveServise parduotuveServise = new ParduotuveServise(new ParduotuveRepository(entityManager));
 
         DarbuotojasController darbuotojasController = new DarbuotojasController(prekeServise, parduotuveServise, sandelysServise, pardavimaiServise, receiver, output);
