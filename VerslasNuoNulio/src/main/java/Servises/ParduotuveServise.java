@@ -15,4 +15,8 @@ public class ParduotuveServise {
     public List<Parduotuve> findAllParduotuve() {
         return parduotuveRepository.findAll();
     }
+
+    public void findPrekeByIdUpdateKiekisPard(long fragment, int kiekisFragment){
+        parduotuveRepository.findPrekeByIdUpdateKiekisPard(fragment, kiekisFragment);
+    }
 }

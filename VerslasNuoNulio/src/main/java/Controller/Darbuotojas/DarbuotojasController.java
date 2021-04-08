@@ -1,15 +1,12 @@
 package Controller.Darbuotojas;
 
 import Controller.Controller;
-import Entity.Sandelys;
 import Servises.PardavimaiServise;
 import Servises.ParduotuveServise;
 import Servises.PrekeServise;
 import Servises.SandelysServise;
 import Utils.Input.InputReceiver;
 import Utils.Output.OutputProducer;
-
-import java.util.Collection;
 
 public class DarbuotojasController implements Controller {
 
@@ -129,6 +126,12 @@ public class DarbuotojasController implements Controller {
     }
 
     public void uzsakytiPrekeIsSandelio() {
-        return;
+        output.produce("Įveskite prekės ID :");
+        long id = Long.valueOf(receiver.receiveLine());
+        output.produce("Įveskite kiekį :");
+        int kiekis = Integer.valueOf(receiver.receiveLine());
+        sandelysServise.findPrekeByIdUpdateKiekis(id, kiekis);
+        parduotuveServise.findPrekeByIdUpdateKiekisPard(id, kiekis);
+        output.produce("Prekė sėkmingai perkelta į Parduotuvę");
     }
 }

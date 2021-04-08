@@ -4,8 +4,6 @@ import Entity.Preke;
 import Entity.Sandelys;
 import Repositories.SandelysRepository.SandelysRepository;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class SandelysServise {
@@ -29,5 +27,14 @@ public class SandelysServise {
         sandelysRepository.save(sandelys);
         return sandelys;}
 
+
+        public void findPrekeByIdUpdateKiekis(long fragment, int kiekisFragment){
+        sandelysRepository.findPrekeByIdUpdateKiekis(fragment, kiekisFragment);
+        }
+
+    public Sandelys updateSandelys(Sandelys sandelys) {
+        sandelysRepository.save(sandelys);
+        return sandelys;
+    }
     }
 
