@@ -40,6 +40,11 @@ public class Parduotuve {
     public Parduotuve() {
     }
 
+    public Parduotuve(int kiekis, Preke preke) {
+        this.kiekis = kiekis;
+        this.preke = preke;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

@@ -31,20 +31,9 @@ public class PrekeServise {
     }
 
     public List<Preke> findAllPrekes() {
-        return prekeRepository.findAll();
+        return prekeRepository.availablePrekes();
     }
 
-//    public void bandymas() {
-//        Session session = Utils.getSessionFactory().openSession();
-//        session.beginTransaction();
-//
-//        Query query2 = session.createNamedQuery("Pavadinimas", Preke.class);
-//        query2.setParameter("pavadinimas", "%W");
-//        List<Preke> prekeList = query2.list();
-//
-//        System.out.println(prekeList);
-//            session.close();
-//        }
     }
 
 

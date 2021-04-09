@@ -45,7 +45,7 @@ public class Projektas {
         ParduotuveServise parduotuveServise = new ParduotuveServise(new ParduotuveRepository(entityManager));
 
         DarbuotojasController darbuotojasController = new DarbuotojasController(prekeServise, parduotuveServise, sandelysServise, pardavimaiServise, receiver, output);
-        PirkejasController pirkejasController = new PirkejasController(prekeServise, receiver, output);
+        PirkejasController pirkejasController = new PirkejasController(prekeServise, sandelysServise, receiver, output, pardavimaiServise);
         return new EntryController(darbuotojasController, pirkejasController, receiver, output);
     }
 

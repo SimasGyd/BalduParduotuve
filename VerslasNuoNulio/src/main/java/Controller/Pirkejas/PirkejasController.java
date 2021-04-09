@@ -1,7 +1,9 @@
 package Controller.Pirkejas;
 
 import Controller.Controller;
+import Servises.PardavimaiServise;
 import Servises.PrekeServise;
+import Servises.SandelysServise;
 import Utils.Input.InputReceiver;
 import Utils.Output.OutputProducer;
 
@@ -9,13 +11,17 @@ public class PirkejasController implements Controller {
 
 
     private final PrekeServise prekeServise;
+    private final SandelysServise sandelysServise;
     private final InputReceiver receiver;
     private final OutputProducer output;
+    private final PardavimaiServise pardavimaiServise;
 
-    public PirkejasController(PrekeServise prekeServise, InputReceiver receiver, OutputProducer output) {
+    public PirkejasController(PrekeServise prekeServise, SandelysServise sandelysServise, InputReceiver receiver, OutputProducer output, PardavimaiServise pardavimaiServise) {
         this.prekeServise = prekeServise;
+        this.sandelysServise = sandelysServise;
         this.receiver = receiver;
         this.output = output;
+        this.pardavimaiServise = pardavimaiServise;
     }
 
     @Override
@@ -37,11 +43,11 @@ public class PirkejasController implements Controller {
         String input = receiver.receiveLine().toUpperCase();
         switch (input) {
             case "1": {
-                listAllPrekes();
+                prekiuSarasas();
                 break;
             }
             case "2": {
-                prekiuFiltrasPagalSpalva();
+                prekiuSarasasBySpalva();
                 break;
             }
             case "3": {
@@ -64,11 +70,7 @@ public class PirkejasController implements Controller {
     }
 
     private void listAllPrekes() {
-//    prekeServise.bandymas();
-    }
-
-    private void prekiuFiltrasPagalSpalva() {
-
+        // sandelysServise.getsarasas();
     }
 
     private void prekiuFiltrasPagalKaina() {
@@ -76,9 +78,24 @@ public class PirkejasController implements Controller {
 
     private void pirktiPreke() {
         output.produce("Įveskite prekės ID :");
-        int id = Integer.valueOf(receiver.receiveLine());
+        long id = Integer.valueOf(receiver.receiveLine());
         output.produce("Įveskite kiekį :");
         int kiekis = Integer.valueOf(receiver.receiveLine());
+        sandelysServise.findPrekeByIdUpdateKiekis(id, kiekis);
+        pardavimaiServise.findPrekeByIdUpdateKiekisPardavimai(id, kiekis);
+        output.produce("Prekė sėkmingai nupirkta!");
+    }
+
+    public void prekiuSarasas() {
+        output.produce("==== Prekės Sąrašas ====");
+        sandelysServise.findAllSandelys().forEach(sandelys -> output.produce(sandelys.toString()));
+        output.produce("========================");
+    }
+
+    public void prekiuSarasasBySpalva() {
+        output.produce("==== Prekės Sandėlyje Surušiuota pagal spalvą ====");
+        sandelysServise.findAllSandelysBySpalva();
+        output.produce("==================================================");
     }
 }
 

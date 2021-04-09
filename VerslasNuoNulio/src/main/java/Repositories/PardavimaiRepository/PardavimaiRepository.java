@@ -4,6 +4,7 @@ import Entity.Pardavimai;
 import Repositories.AbstractRepository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.util.List;
 
 public class PardavimaiRepository extends AbstractRepository<Pardavimai, Long> {
@@ -14,5 +15,13 @@ public class PardavimaiRepository extends AbstractRepository<Pardavimai, Long> {
     @Override
     public List<Pardavimai> findAll() {
         return entityManager.createQuery("FROM Pardavimai where kiekis > 0", Pardavimai.class).getResultList();
+    }
+    public void findPrekeByIdUpdateKiekisPardavimai(long fragmentID, int kiekisFragment) {
+        entityManager.getTransaction().begin();
+        Query query = entityManager.createQuery("UPDATE Pardavimai set kiekis = kiekis + :kiekisFragment where id = :idFragment");
+        query.setParameter("idFragment", fragmentID);
+        query.setParameter("kiekisFragment", kiekisFragment);
+        query.executeUpdate();
+        entityManager.getTransaction().commit();
     }
 }

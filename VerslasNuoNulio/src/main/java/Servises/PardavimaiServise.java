@@ -15,5 +15,9 @@ public class PardavimaiServise {
     public List<Pardavimai> findAllPardavimai() {
         return pardavimaiRepository.findAll();
     }
+
+    public void findPrekeByIdUpdateKiekisPardavimai(long fragment, int kiekisFragment) {
+        pardavimaiRepository.findPrekeByIdUpdateKiekisPardavimai(fragment, kiekisFragment);
+    }
 }
 

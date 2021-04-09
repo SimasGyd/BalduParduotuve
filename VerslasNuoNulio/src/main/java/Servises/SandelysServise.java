@@ -18,6 +18,10 @@ public class SandelysServise {
         return sandelysRepository.findAll();
     }
 
+    public void findAllSandelysBySpalva() {
+        sandelysRepository.findAllbySpalva();
+    }
+
     public List<Sandelys> uzsakytiPrekes() {
         return sandelysRepository.ispetiApiePrekesUzsakyma();
     }
@@ -25,16 +29,17 @@ public class SandelysServise {
     public Sandelys saveNewPrekeSand(int kiekis, Preke preke) {
         Sandelys sandelys = new Sandelys(kiekis, preke);
         sandelysRepository.save(sandelys);
-        return sandelys;}
-
-
-        public void findPrekeByIdUpdateKiekis(long fragment, int kiekisFragment){
-        sandelysRepository.findPrekeByIdUpdateKiekis(fragment, kiekisFragment);
-        }
-
-    public Sandelys updateSandelys(Sandelys sandelys) {
-        sandelysRepository.save(sandelys);
         return sandelys;
     }
+
+
+    public void findPrekeByIdUpdateKiekis(long fragment, int kiekisFragment) {
+        sandelysRepository.findPrekeByIdUpdateKiekis(fragment, kiekisFragment);
     }
+
+    public void updateSandelys(Sandelys sandelys) {
+        sandelysRepository.save(sandelys);
+    }
+
+}
 
