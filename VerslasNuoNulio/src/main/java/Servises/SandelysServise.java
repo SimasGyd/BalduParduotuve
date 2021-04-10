@@ -18,9 +18,6 @@ public class SandelysServise {
         return sandelysRepository.findAll();
     }
 
-    public void findAllSandelysBySpalva() {
-        sandelysRepository.findAllbySpalva();
-    }
 
     public List<Sandelys> uzsakytiPrekes() {
         return sandelysRepository.ispetiApiePrekesUzsakyma();

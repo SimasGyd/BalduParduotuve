@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "PREKE")
@@ -133,6 +134,19 @@ public class Preke implements Serializable {
 
     public void setKaina(double kaina) {
         this.kaina = kaina;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Preke preke = (Preke) o;
+        return id.equals(preke.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
 
