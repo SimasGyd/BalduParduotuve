@@ -20,7 +20,7 @@ public class PirkejasController implements Controller {
     private final InputReceiver receiver;
     private final OutputProducer output;
     private final PardavimaiServise pardavimaiServise;
-    private final ParduotuveServise parduotuveServise;
+
 
     public PirkejasController(PrekeServise prekeServise, SandelysServise sandelysServise, InputReceiver receiver, OutputProducer output, PardavimaiServise pardavimaiServise, ParduotuveServise parduotuveServise) {
         this.prekeServise = prekeServise;
@@ -28,7 +28,7 @@ public class PirkejasController implements Controller {
         this.receiver = receiver;
         this.output = output;
         this.pardavimaiServise = pardavimaiServise;
-        this.parduotuveServise = parduotuveServise;
+
     }
 
     @Override
@@ -76,11 +76,11 @@ public class PirkejasController implements Controller {
         receiveInputAndAct();
     }
 
-    private void listAllPrekes() {
-        // sandelysServise.getsarasas();
-    }
 
     private void prekiuFiltrasPagalKaina() {
+        output.produce("==== Prekės Sandėlyje Surušiuota pagal kainą ====");
+
+        output.produce("==================================================");
     }
 
     private void pirktiPreke() {
@@ -95,21 +95,13 @@ public class PirkejasController implements Controller {
 
     public void prekiuSarasas() {
         output.produce("==== Prekės Sąrašas ====");
-        List<Sandelys> sandelioPrekes = sandelysServise.findAllSandelys();
-        List<Parduotuve> parduotuvePrekes = parduotuveServise.findAllParduotuve();
-        for (Sandelys sandelys : sandelioPrekes){
-            for(Parduotuve parduotuve : parduotuvePrekes){
-                if (sandelys.getPreke().equals(parduotuve.getPreke())){
-                    sandelys.setKiekis(sandelys.getKiekis() + parduotuve.getKiekis());
-                }
-            }
-        }
-        sandelioPrekes.forEach(preke -> output.produce(preke.toString()));
+        prekeServise.getAllPrekes();
         output.produce("========================");
     }
 
     public void prekiuSarasasBySpalva() {
         output.produce("==== Prekės Sandėlyje Surušiuota pagal spalvą ====");
+        prekeServise.getAllPrekesByColor();
         output.produce("==================================================");
     }
 }

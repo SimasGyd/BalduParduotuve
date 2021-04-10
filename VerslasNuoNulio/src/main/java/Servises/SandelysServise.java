@@ -28,15 +28,8 @@ public class SandelysServise {
         sandelysRepository.save(sandelys);
         return sandelys;
     }
-
-
     public void findPrekeByIdUpdateKiekis(long fragment, int kiekisFragment) {
         sandelysRepository.findPrekeByIdUpdateKiekis(fragment, kiekisFragment);
     }
-
-    public void updateSandelys(Sandelys sandelys) {
-        sandelysRepository.save(sandelys);
-    }
-
 }
 

@@ -5,7 +5,6 @@ import Repositories.AbstractRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class SandelysRepository extends AbstractRepository {
