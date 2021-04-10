@@ -15,15 +15,15 @@ public class SandelysRepository extends AbstractRepository {
 
     @Override
     public List findAll() {
-        return entityManager.createQuery("FROM Sandelys where kiekis > 0", Sandelys.class).getResultList();
+        return entityManager().createQuery("FROM Sandelys where kiekis > 0", Sandelys.class).getResultList();
     }
 
     public List ispetiApiePrekesUzsakyma() {
-        return entityManager.createQuery("FROM Sandelys where kiekis < 2", Sandelys.class).getResultList();
+        return entityManager().createQuery("FROM Sandelys where kiekis < 2", Sandelys.class).getResultList();
     }
 
-    @Transactional
     public void findPrekeByIdUpdateKiekis(long fragmentID, int kiekisFragment) {
+        EntityManager entityManager = entityManager();
         entityManager.getTransaction().begin();
         Query query = entityManager.createQuery("UPDATE Sandelys set kiekis = kiekis - :kiekisFragment where id = :idFragment");
         query.setParameter("idFragment", fragmentID);

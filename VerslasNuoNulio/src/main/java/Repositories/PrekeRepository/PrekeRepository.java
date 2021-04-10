@@ -1,6 +1,8 @@
 package Repositories.PrekeRepository;
 
+import Entity.Parduotuve;
 import Entity.Preke;
+import Entity.Sandelys;
 import Repositories.AbstractRepository;
 
 import javax.persistence.EntityManager;
@@ -11,7 +13,7 @@ public class PrekeRepository extends AbstractRepository<Preke, Long> {
 
     @Override
     public List findAll() {
-        return entityManager.createQuery("FROM Preke", Preke.class).getResultList();
+        return entityManager().createQuery("FROM Preke", Preke.class).getResultList();
     }
 
 public List availablePrekes(){
@@ -22,7 +24,17 @@ public List availablePrekes(){
                 "inner join Parduotuve par on p.id = par.preke_id\n" +
                 "group by pavadinimas\n" +
                 "ORDER BY spalva";
-        return entityManager.createQuery(uzklausa).getResultList();
+        return entityManager().createQuery(uzklausa).getResultList();
 }
-
+//        output.produce("==== Prekės Sąrašas ====");
+//    List<Sandelys> sandelioPrekes = sandelysServise.findAllSandelys();
+//    List<Parduotuve> parduotuvePrekes = parduotuveServise.findAllParduotuve();
+//        for (Sandelys sandelys : sandelioPrekes){
+//        for(Parduotuve parduotuve : parduotuvePrekes){
+//            if (sandelys.getPreke().equals(parduotuve.getPreke())){
+//                sandelys.setKiekis(sandelys.getKiekis() + parduotuve.getKiekis());
+//            }
+//        }
+//    }
+//        sandelioPrekes.forEach(preke -> output.produce(preke.toString()));
 }

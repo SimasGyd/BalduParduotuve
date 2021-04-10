@@ -14,10 +14,11 @@ public class ParduotuveRepository extends AbstractRepository {
 
     @Override
     public List<Parduotuve> findAll() {
-        return entityManager.createQuery("FROM Parduotuve where kiekis > 0", Parduotuve.class).getResultList();
+        return entityManager().createQuery("FROM Parduotuve where kiekis > 0", Parduotuve.class).getResultList();
     }
 
     public void findPrekeByIdUpdateKiekisPard(long fragmentID, int kiekisFragment) {
+        EntityManager entityManager = entityManager();
         entityManager.getTransaction().begin();
         Query query = entityManager.createQuery("UPDATE Parduotuve set kiekis = kiekis + :kiekisFragment where id = :idFragment");
         query.setParameter("idFragment", fragmentID);
