@@ -37,7 +37,7 @@ public class Projektas {
         OutputProducer output = new DefaultOutputProducer();
 
         DataImport dataImport = new DataImport();
-      //  dataImport.addPrekes();
+        dataImport.addPrekes();
 
 
         PardavimaiServise pardavimaiServise = new PardavimaiServise(new PardavimaiRepository(entityManager));

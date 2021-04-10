@@ -79,7 +79,7 @@ public class PirkejasController implements Controller {
 
     private void prekiuFiltrasPagalKaina() {
         output.produce("==== Prekės Sandėlyje Surušiuota pagal kainą ====");
-
+        prekeServise.getAllPrekesByKaina();
         output.produce("==================================================");
     }
 
