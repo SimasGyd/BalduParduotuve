@@ -39,10 +39,11 @@ public class Projektas {
         DataImport dataImport = new DataImport();
       //  dataImport.addPrekes();
 
-        PrekeServise prekeServise = new PrekeServise(new PrekeRepository(entityManager));
+
         PardavimaiServise pardavimaiServise = new PardavimaiServise(new PardavimaiRepository(entityManager));
         SandelysServise sandelysServise = new SandelysServise(new SandelysRepository(entityManager));
         ParduotuveServise parduotuveServise = new ParduotuveServise(new ParduotuveRepository(entityManager));
+        PrekeServise prekeServise = new PrekeServise(new PrekeRepository(entityManager), sandelysServise, parduotuveServise, output);
 
         DarbuotojasController darbuotojasController = new DarbuotojasController(prekeServise, parduotuveServise, sandelysServise, pardavimaiServise, receiver, output);
         PirkejasController pirkejasController = new PirkejasController(prekeServise, sandelysServise, receiver, output, pardavimaiServise, parduotuveServise);

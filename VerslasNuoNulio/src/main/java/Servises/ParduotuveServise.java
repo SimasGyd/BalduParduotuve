@@ -26,8 +26,5 @@ public class ParduotuveServise {
         parduotuveRepository.save(parduotuve);
         return parduotuve;
     }
-    public int getKiekisPard(Parduotuve parduotuve){
-        int kiekis = parduotuve.getKiekis();
-        return kiekis;
-    }
+
 }

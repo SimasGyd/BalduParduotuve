@@ -5,12 +5,15 @@ import javax.persistence.EntityTransaction;
 
 public abstract class AbstractRepository<T, ID> implements CrudRepository<T, ID> {
 
-    protected final EntityManager entityManager;
+    private final EntityManager entityManager;
     private final Class<? extends T> entityClass;
 
     public AbstractRepository(EntityManager entityManager, Class<? extends T> entityClass) {
         this.entityManager = entityManager;
         this.entityClass = entityClass;
+    }
+    protected EntityManager entityManager (){
+        return entityManager.getEntityManagerFactory().createEntityManager();
     }
 
     @Override
