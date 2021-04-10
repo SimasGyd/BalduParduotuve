@@ -7,6 +7,8 @@ import Repositories.PrekeRepository.PrekeRepository;
 import Utils.Output.OutputProducer;
 import org.hibernate.criterion.Order;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -46,7 +48,7 @@ public class PrekeServise {
     }
 
     public void getAllPrekesByColor() {
-        Comparator<Preke> bySpalva = Comparator.comparing(Preke::getSpalva);
+        Comparator<Sandelys> compareBySpalva = (Sandelys p1 , Sandelys p2) -> p1.getPreke().getSpalva().compareTo(p2.getPreke().getSpalva());
         List<Sandelys> sandelioPrekes = sandelysServise.findAllSandelys();
         List<Parduotuve> parduotuvePrekes = parduotuveServise.findAllParduotuve();
         for (Sandelys sandelys : sandelioPrekes) {
@@ -56,6 +58,21 @@ public class PrekeServise {
                 }
             }
         }
+        Collections.sort(sandelioPrekes, compareBySpalva);
+        sandelioPrekes.forEach(preke -> output.produce(preke.toString()));
+    }
+    public void getAllPrekesByKaina() {
+        Comparator<Sandelys> compareByKaina = (Sandelys p1, Sandelys p2) -> p1.getPreke().getKaina() < p2.getPreke().getKaina() ? -1 : p1.getPreke().getKaina() == p2.getPreke().getKaina() ? 0 : 1;
+        List<Sandelys> sandelioPrekes = sandelysServise.findAllSandelys();
+        List<Parduotuve> parduotuvePrekes = parduotuveServise.findAllParduotuve();
+        for (Sandelys sandelys : sandelioPrekes) {
+            for (Parduotuve parduotuve : parduotuvePrekes) {
+                if (sandelys.getPreke().equals(parduotuve.getPreke())) {
+                    sandelys.setKiekis(sandelys.getKiekis() + parduotuve.getKiekis());
+                }
+            }
+        }
+        Collections.sort(sandelioPrekes, compareByKaina);
         sandelioPrekes.forEach(preke -> output.produce(preke.toString()));
     }
 }
