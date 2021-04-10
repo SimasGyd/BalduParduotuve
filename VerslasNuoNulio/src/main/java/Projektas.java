@@ -37,7 +37,7 @@ public class Projektas {
         OutputProducer output = new DefaultOutputProducer();
 
         DataImport dataImport = new DataImport();
-        dataImport.addPrekes();
+      //  dataImport.addPrekes();
 
         PrekeServise prekeServise = new PrekeServise(new PrekeRepository(entityManager));
         PardavimaiServise pardavimaiServise = new PardavimaiServise(new PardavimaiRepository(entityManager));
@@ -45,7 +45,7 @@ public class Projektas {
         ParduotuveServise parduotuveServise = new ParduotuveServise(new ParduotuveRepository(entityManager));
 
         DarbuotojasController darbuotojasController = new DarbuotojasController(prekeServise, parduotuveServise, sandelysServise, pardavimaiServise, receiver, output);
-        PirkejasController pirkejasController = new PirkejasController(prekeServise, sandelysServise, receiver, output, pardavimaiServise);
+        PirkejasController pirkejasController = new PirkejasController(prekeServise, sandelysServise, receiver, output, pardavimaiServise, parduotuveServise);
         return new EntryController(darbuotojasController, pirkejasController, receiver, output);
     }
 

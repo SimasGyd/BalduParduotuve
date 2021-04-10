@@ -1,13 +1,8 @@
 package Servises;
 
 import Entity.Preke;
-import Entity.Sandelys;
 import Repositories.PrekeRepository.PrekeRepository;
-import Utils.Utils;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
-import java.util.Collection;
 import java.util.List;
 
 public class PrekeServise {
@@ -33,6 +28,9 @@ public class PrekeServise {
     public List<Preke> findAllPrekes() {
         return prekeRepository.availablePrekes();
     }
+
+
+
 
     }
 
